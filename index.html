@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Times Up Name Generator</title>
 </head>
 <body>
@@ -32,6 +32,7 @@
            
             <div class="content-left">
                 <div class="step step1">
+                    <p class="span-diff"></p>
                     <h2 class="difficulty-text content-left-title"></h2>
                     <div class="difficulties content-left-boxes">
                         <div class="difficulty box"><p class="difficulty-level difficulty1"></p> </div>
@@ -42,9 +43,10 @@
                 </div>
 
                 <div class="step step2">
+                    <p class="span-cat"></p>
                     <h2 class="theme-text content-left-title"></h2>
                     <div class="themes content-left-boxes">
-                        <div class="theme box"><p class="theme-level theme1">Easy</p> </div>
+                        <div class="theme box"><p class="theme-level theme1"></p> </div>
                         <div class="theme box"><p class="theme-level theme2"></p> </div>
                         <div class="theme box"><p class="theme-level theme3"></p> </div>
                         <div class="theme box"><p class="theme-level theme4"></p> </div>
@@ -54,6 +56,7 @@
                 </div>
 
                 <div class="step step3">
+                    <p class="span-ite spanned"></p>
                     <h2 class="iteration-text content-left-title"></h2>
                     <div class="iterations content-left-boxes">
                         <div class="iteration box"><p class="iteration-level iteration1">5</p> </div>
@@ -159,5 +162,6 @@
     </main>
     <script src="/data.js"></script>
     <script src="/script.js"></script>
+
 </body>
 </html>

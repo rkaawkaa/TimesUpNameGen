@@ -169,9 +169,46 @@ main {
     border: none;
 }
 
+.difficulty-text {
+    position: relative;
+}
+.span-diff {
+    position: absolute;
+    top: 0rem;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    animation-name: horizontal-shaking;
+    animation-duration: 0.2s;
+    animation-delay: 0.8s;
+    animation-iteration-count: 2;
+    display: none;
+}
+.span-diff.spanned {
+    display: block;
+}
+
 
 /*step2*/
 
+.step2 {position: relative;}
+.span-cat {
+    position: absolute;
+    top: -1.6rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    animation-name: horizontal-shaking;
+    animation-duration: 0.2s;
+    animation-delay: 0.8s;
+    animation-iteration-count: 2;
+    display: none;
+}
+.spanned {
+    display: block;
+}
 
 .theme, .iteration {
     padding: 2.5rem 3rem;
@@ -184,6 +221,26 @@ main {
 
 }
 /*last-step */
+
+.step3 {position: relative;}
+.span-ite {
+    position: absolute;
+    top: -1.6rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    animation-name: horizontal-shaking;
+    animation-duration: 0.2s;
+    animation-delay: 0.8s;
+    animation-iteration-count: 2;
+    display: none;
+}
+.spanned {
+    display: block;
+}
+
+
 .content-left .generate-text {
     text-align: center;
     
@@ -203,6 +260,12 @@ main {
     cursor:pointer;
     transition: all .3s ease;
     text-transform: uppercase;
+}
+.button-generate .cta.disable {
+    pointer-events: none;
+    cursor: default;
+    background-color: rgba(206, 150, 128, 0.6);
+    
 }
 
 .button-generate .cta:hover, .button-generate .cta:focus {
@@ -226,7 +289,10 @@ main {
     height: auto;
     width: 100%;
     position: relative;
+    opacity: 0;
 }
+
+
 
 .blur {
     position: absolute;
@@ -309,6 +375,9 @@ main {
     justify-content: space-between;
 }
 
+body.waiting {
+    cursor: wait;
+}
 a {
     margin: 0;
     text-decoration: none;
@@ -330,11 +399,15 @@ a {
     top: 40%;
     left: 45%;
     display: none;
-   
-    
     -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
     animation: load6 1.7s infinite ease, round 1.7s infinite ease;
   }
+  .loader.displayed {
+      display: block;
+  }
+ 
+
+
   @-webkit-keyframes load6 {
     0% {
       box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
@@ -400,6 +473,20 @@ a {
     }
   }
   
+  @keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+  @keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+   }
 
 
 
