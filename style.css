@@ -290,8 +290,15 @@ main {
     width: 100%;
     position: relative;
     opacity: 0;
+    
 }
 
+.reset-btn, .generate-btn {
+    font-weight: bold;
+    display: inline;
+    text-decoration: underline;
+    cursor:pointer;
+}
 
 
 .blur {

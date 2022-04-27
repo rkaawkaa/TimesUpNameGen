@@ -258,6 +258,7 @@ function displayResults() {
 }
 
 function displayContent() {
+
     
     displayLoader();
     setTimeout(removeLoader, 2000);
@@ -283,6 +284,8 @@ function displayRight() {
 
 function opacityDisplayRight() {
     var counter = 0;
+
+    
     myInterval = setInterval(function() {
         const displayRight = document.querySelector('.display-right');
         displayRight.style.opacity = (counter/100);
@@ -340,6 +343,37 @@ function enableClick() {
 
 
 function createResults() {
+    console.log("createresults");
     //créer les résultats 
     // On peut créer 3 sous-fonctions.
 }
+
+
+
+
+
+
+
+//reset all parameters 
+const resetBtn = document.querySelector('.reset-btn');
+const generateBtn = document.querySelector('.generate-btn');
+
+resetBtn.addEventListener('click', () => {
+    titleDifficulty.scrollIntoView({behavior: "smooth"});
+    difficulties.forEach(difficulty => {
+        difficulty.classList.remove('active');
+    })
+    iterations.forEach(iteration => {
+        iteration.classList.remove('active');
+    })
+    themes.forEach(theme => {
+        theme.classList.remove('active');
+    })
+    
+})
+generateBtn.addEventListener('click', () => {
+
+    createResults();
+})
+
+// si ça ne marche pas avc juste create results, relancer toute la machine

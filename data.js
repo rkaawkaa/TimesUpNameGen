@@ -52,13 +52,13 @@ var resultText = {
         "selectedd" : "<b>Difficulty level :<b> ",
         "selectedc" : "<b>Selected categories :<b> ",
         "selectedi" : "<b>Number of generated names :<b> ",
-        "warningmessage": "You can <a href=\"\">reset all parameters</a> and/or <a href=\"\">generate new names</a>."
+        "warningmessage": "You can <p class= \"reset-btn\">reset all parameters</p> and/or <p class= \"generate-btn\">generate new names</p>."
     },
     "french": {
         "selectedd" : "<b>Niveau de difficulté :</b> ",
         "selectedc" : "<b>Catégories séléctionnées :<b> ",
         "selectedi" : "<b>Nombre de noms générés :<b> ",
-        "warningmessage": "Vous pouvez <a href=\"\">réinitialiser tous les paramètres</a> et/ou <a href=\"\">générer de nouveaux noms</a>."
+        "warningmessage": "Vous pouvez <p class= \"reset-btn\">réinitialiser tous les paramètres</p> et/ou <p class= \"generate-btn\">générer de nouveaux noms</p>."
     }
 }
 
