@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tapestry&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Akshar&family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 *{
     box-sizing: border-box;
@@ -63,7 +64,7 @@ header::before {
 
 .main-title {
     font-size: 4.5rem;
-    font-family: 'Tapestry', cursive;
+    font-family: 'Lobster', sans-serif;
 }
 
 .langwrap {
@@ -107,7 +108,7 @@ main {
     font-size: 2rem;
 }
 .intro-text {
-    font-family: 'Tapestry', cursive;
+    font-family: 'Akshar', cursive;
 }
 
 /* CONTENT LEFT */
@@ -148,7 +149,7 @@ main {
     justify-content: center;
     align-items: center;
     transition: all .3s ease;
-    font-family: 'Tapestry', cursive;
+    font-family: 'Akshar', cursive;
 }
 
 .box p {
@@ -200,7 +201,7 @@ main {
     font-size: 1.5rem;
     color: var(--primary-color);
     font-weight: bold;
-    animation-name: horizontal-shaking;
+    animation-name: horizontal-shaking2;
     animation-duration: 0.2s;
     animation-delay: 0.8s;
     animation-iteration-count: 2;
@@ -289,7 +290,7 @@ main {
     height: auto;
     width: 100%;
     position: relative;
-    opacity: 1;
+    opacity: 0;
     
 }
 
@@ -341,7 +342,7 @@ main {
 }
 .result-name-text {
     font-size: 1.4rem;
-    font-family: 'Tapestry', cursive;
+    font-family: 'Akshar', cursive;
     min-width: 60px;
     display: inline-block;
     text-transform: capitalize;
@@ -498,6 +499,13 @@ a {
     75% { transform: translateX(5px) }
     100% { transform: translateX(0) }
    }
+   @keyframes horizontal-shaking2 {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+   }
 
 
 
@@ -515,7 +523,7 @@ footer {
   footer h3 {
       text-align: center;
       font-size: 2rem;
-      font-family: 'Tapestry', cursive;
+      font-family: 'Akshar', cursive;
   }
 
 

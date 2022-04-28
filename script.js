@@ -99,7 +99,7 @@ themes.forEach(theme => {
                 checkcatty ++;
             }
         })
-        console.log(checkcatty);
+        
         if(checkcatty ==0) {
             const spanCat = document.querySelector('.span-cat');
             spanCat.classList.add('spanned');
@@ -142,7 +142,7 @@ buttonGenerate.addEventListener('click', () =>  {
     checkDifficulty();
     checkCategories();
     checkIterations();
-    console.log(checkdiff, checkcat, checkite)
+
     if(checkdiff == 0) {
         createSpanDifficulty();
     } else if (checkcat == 0) {
@@ -250,7 +250,7 @@ function displayResults() {
     disabledClick();
 
 
-    console.log("validation form validated ! ");
+    
     const contentRight = document.querySelector('.content-right');
     contentRight.scrollIntoView({behavior: "smooth"});
     const displayRight = document.querySelector('.display-right');
@@ -347,10 +347,8 @@ function enableClick() {
 
 
 function createResults() {
-    console.log("createresults");
-    // getAttr2();
-    //créer les résultats 
-    // On peut créer 3 sous-fonctions.
+    resultats.innerHTML = "";
+    getAttr2();
 }
 
 
@@ -377,70 +375,16 @@ resetBtn.addEventListener('click', () => {
     
 })
 generateBtn.addEventListener('click', () => {
-
-    createResults();
+    resultats.innerHTML = "";
+    const displayRight = document.querySelector('.display-right');
+    displayRight.style.opacity = 0;
+    displayContent();
 })
 
-// si ça ne marche pas avc juste create results, relancer toute la machine
 
 
 
-// setInterval(getAttr2,6000)
 
-
-// function getAttr2() {
-//     difficulties.forEach(diff => {
-//         if(diff.classList.contains('active')) {
-//             diffAttr = diff.getAttribute('diffc');
-            
-//             iterations.forEach(iteration => {
-//                 if(iteration.classList.contains('active')) {
-//                     itAttr = iteration.getAttribute('numberit');
-//                     getAttr3();
-//                 }
-//             })
-//         }
-//     })
-// }
-
-// function getAttr3() {
-//     themes.forEach(theme => {
-//         if(theme.classList.contains('active')) {
-//             thAttr = theme.getAttribute('themeAttr');
-//             displaytheCategorie();
-            
-//         }
-//     })
-// }
-
-// function displaytheCategorie() {
-    
-//     var data = database[diffAttr][thAttr];
-//     shuffle(data);
-//     var newData = data.slice(0,itAttr);
-//     resultats.innerHTML += ` <div class="result-cat"><h3>${thAttr} :</h3></div>`;
-//     console.log(resultats)
-    
-    
-    
-// }
-
-
-// function shuffle(a) {
-//     var j, x, i;
-//     for (i = a.length - 1; i > 0; i--) {
-//         j = Math.floor(Math.random() * (i + 1));
-//         x = a[i];
-//         a[i] = a[j];
-//         a[j] = x;
-//     }
-//     return a;
-    
-// }
-
-
-
-setInterval(getAttr2,6000)
 
 
 function getAttr2() {
@@ -478,20 +422,21 @@ function getAttr3() {
 function displaytheCategorie() {
     var titlecat = dataText[langAttr][thAttr];
     var data = database[diffAttr][thAttr];
-    console.log(data)
+    
     shuffle(data);
     var newData = data.slice(0,itAttr);
     resultats.innerHTML += ` <div class="result-cat"><h3>${titlecat} :</h3><div class="result-name">`;
     for(i = 0; i < itAttr; i++) {
         var name = newData[i]
         
-        resultats.innerHTML += `<p class="result-name-text
+        resultats.innerHTML += `<p title="click to search on google" class="result-name-text
         ">${name}</p>`
+       
     }
     resultats.innerHTML += `</div>
     </div>`
     
-    
+    goGoogle();
     
 }
 
@@ -508,3 +453,12 @@ function shuffle(a) {
     
 }
 
+function goGoogle() {
+    const resultsText = document.querySelectorAll('.result-name-text');
+    resultsText.forEach(result => {
+        result.addEventListener('click',() => {
+            var q = result.textContent;
+            window.open('http://google.com/search?q='+q);
+        })
+    })
+}

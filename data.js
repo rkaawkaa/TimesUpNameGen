@@ -51,14 +51,14 @@ var resultText = {
     "english": {
         "selectedd" : "<b>Difficulty level :<b> ",
         "selectedc" : "<b>Selected categories :<b> ",
-        "selectedi" : "<b>Number of generated names :<b> ",
-        "warningmessage": "You can <p class= \"reset-btn\">reset all parameters</p> and/or <p class= \"generate-btn\">generate new names</p>."
+        "selectedi" : "<b>Number of generated names by categorie:<b> ",
+        "warningmessage": "You can <p class= \"reset-btn\">reset all parameters</p> or <p class= \"generate-btn\">generate new names</p>."
     },
     "french": {
         "selectedd" : "<b>Niveau de difficulté :</b> ",
         "selectedc" : "<b>Catégories séléctionnées :<b> ",
-        "selectedi" : "<b>Nombre de noms générés :<b> ",
-        "warningmessage": "Vous pouvez <p class= \"reset-btn\">réinitialiser tous les paramètres</p> et/ou <p class= \"generate-btn\">générer de nouveaux noms</p>."
+        "selectedi" : "<b>Nombre de noms générés par catégories:<b> ",
+        "warningmessage": "Vous pouvez <p class= \"reset-btn\">réinitialiser tous les paramètres</p> ou <p class= \"generate-btn\">générer de nouveaux noms</p>."
     }
 }
 
@@ -115,18 +115,3 @@ var database = {
 }
 
 
-console.log(database['easy']['athletes'].length);
-console.log(database['medium']['athletes'].length);
-console.log(database['hard']['athletes'].length);
-console.log(database['easy']['intellectuals'].length);
-console.log(database['medium']['intellectuals'].length);
-console.log(database['hard']['intellectuals'].length);
-console.log(database['easy']['historic'].length);
-console.log(database['medium']['historic'].length);
-console.log(database['hard']['historic'].length);
-console.log(database['easy']['fictional'].length);
-console.log(database['medium']['fictional'].length);
-console.log(database['hard']['fictional'].length);
-console.log(database['easy']['series'].length);
-console.log(database['medium']['series'].length);
-console.log(database['hard']['series'].length);
