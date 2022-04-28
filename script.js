@@ -27,12 +27,15 @@ const selectedDiff = document.querySelector('.selected-d');
 const selectedIt = document.querySelector('.selected-i');
 const warningMessage = document.querySelector('.warning-message');
 const coolMessage = document.querySelector('.cool-message');
+const resultats = document.querySelector('.results');
 
 
 
 /*Change content on click languages */
 changeContent(langLink[0]);
 checkCategories();
+
+
 langLink.forEach(el => {
     el.addEventListener('click', () => {
         langEl.querySelector('.active').classList.remove('active')
@@ -74,6 +77,7 @@ function changeContent(el) {
 /*Selecting difficulties */
 difficulties.forEach(difficulty => {
     difficulty.addEventListener('click', () => {
+        
         difficulties.forEach(diff => {
             diff.classList.remove('active');
         })
@@ -344,6 +348,7 @@ function enableClick() {
 
 function createResults() {
     console.log("createresults");
+    // getAttr2();
     //créer les résultats 
     // On peut créer 3 sous-fonctions.
 }
@@ -377,3 +382,129 @@ generateBtn.addEventListener('click', () => {
 })
 
 // si ça ne marche pas avc juste create results, relancer toute la machine
+
+
+
+// setInterval(getAttr2,6000)
+
+
+// function getAttr2() {
+//     difficulties.forEach(diff => {
+//         if(diff.classList.contains('active')) {
+//             diffAttr = diff.getAttribute('diffc');
+            
+//             iterations.forEach(iteration => {
+//                 if(iteration.classList.contains('active')) {
+//                     itAttr = iteration.getAttribute('numberit');
+//                     getAttr3();
+//                 }
+//             })
+//         }
+//     })
+// }
+
+// function getAttr3() {
+//     themes.forEach(theme => {
+//         if(theme.classList.contains('active')) {
+//             thAttr = theme.getAttribute('themeAttr');
+//             displaytheCategorie();
+            
+//         }
+//     })
+// }
+
+// function displaytheCategorie() {
+    
+//     var data = database[diffAttr][thAttr];
+//     shuffle(data);
+//     var newData = data.slice(0,itAttr);
+//     resultats.innerHTML += ` <div class="result-cat"><h3>${thAttr} :</h3></div>`;
+//     console.log(resultats)
+    
+    
+    
+// }
+
+
+// function shuffle(a) {
+//     var j, x, i;
+//     for (i = a.length - 1; i > 0; i--) {
+//         j = Math.floor(Math.random() * (i + 1));
+//         x = a[i];
+//         a[i] = a[j];
+//         a[j] = x;
+//     }
+//     return a;
+    
+// }
+
+
+
+setInterval(getAttr2,6000)
+
+
+function getAttr2() {
+    langLink.forEach(lang => {
+        if(lang.classList.contains('active')) {
+            langAttr = lang.getAttribute('language');
+            
+        }
+    })
+    difficulties.forEach(diff => {
+        if(diff.classList.contains('active')) {
+            diffAttr = diff.getAttribute('diffc');
+            
+            iterations.forEach(iteration => {
+                if(iteration.classList.contains('active')) {
+                    itAttr = iteration.getAttribute('numberit');
+                    getAttr3();
+                }
+            })
+        }
+    })
+}
+
+function getAttr3() {
+    
+    themes.forEach(theme => {
+        if(theme.classList.contains('active')) {
+            thAttr = theme.getAttribute('themeAttr');
+            displaytheCategorie();
+            
+        }
+    })
+}
+
+function displaytheCategorie() {
+    var titlecat = dataText[langAttr][thAttr];
+    var data = database[diffAttr][thAttr];
+    console.log(data)
+    shuffle(data);
+    var newData = data.slice(0,itAttr);
+    resultats.innerHTML += ` <div class="result-cat"><h3>${titlecat} :</h3><div class="result-name">`;
+    for(i = 0; i < itAttr; i++) {
+        var name = newData[i]
+        
+        resultats.innerHTML += `<p class="result-name-text
+        ">${name}</p>`
+    }
+    resultats.innerHTML += `</div>
+    </div>`
+    
+    
+    
+}
+
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+    
+}
+

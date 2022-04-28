@@ -289,7 +289,7 @@ main {
     height: auto;
     width: 100%;
     position: relative;
-    opacity: 0;
+    opacity: 1;
     
 }
 
@@ -328,6 +328,7 @@ main {
 
 .result-cat {
     margin-top: 2rem;
+    text-transform: capitalize;
 }
 .result-cat h3 {
     font-size: 1.7rem;
@@ -342,7 +343,10 @@ main {
     font-size: 1.4rem;
     font-family: 'Tapestry', cursive;
     min-width: 60px;
+    display: inline-block;
+    text-transform: capitalize;
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     margin-right: 1rem;
     padding: 0.5rem 1.5rem;
     background-color: rgba(192, 57, 43, 0.72);
