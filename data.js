@@ -34,7 +34,7 @@ var dataText = {
         "titlefinal": "Finalement, cliquez sur le bouton ci-dessous !",
         "easy": "Facile",
         "medium": "Moyen",
-        "hard": "Difficiles",
+        "hard": "Difficile",
         "athletes": "Les sportifs",
         "series" : "Séries et Films",
         "intellectuals" : "Les intellectuels",
@@ -52,13 +52,13 @@ var resultText = {
         "selectedd" : "<b>Difficulty level :<b> ",
         "selectedc" : "<b>Selected categories :<b> ",
         "selectedi" : "<b>Number of generated names by categorie:<b> ",
-        "warningmessage": "You can <p class= \"reset-btn\">reset all parameters</p> or <p class= \"generate-btn\">generate new names</p>."
+        "warningmessage": "You can <p class=\"reset-btn\">reset all parameters</p> or <p class=\"generate-btn\">generate new names</p>."
     },
     "french": {
         "selectedd" : "<b>Niveau de difficulté :</b> ",
         "selectedc" : "<b>Catégories séléctionnées :<b> ",
         "selectedi" : "<b>Nombre de noms générés par catégories:<b> ",
-        "warningmessage": "Vous pouvez <p class= \"reset-btn\">réinitialiser tous les paramètres</p> ou <p class= \"generate-btn\">générer de nouveaux noms</p>."
+        "warningmessage": "Vous pouvez <p class=\"reset-btn\">réinitialiser tous les paramètres</p> ou <p class=\"generate-btn\">générer de nouveaux noms</p>."
     }
 }
 

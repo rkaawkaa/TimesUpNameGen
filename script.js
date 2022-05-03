@@ -44,7 +44,44 @@ langLink.forEach(el => {
     })
 })
 
+//reset all parameters 
+const resetBtn = document.querySelector('.reset-btn');
+const generateBtn = document.querySelector('.generate-btn');
 
+resetBtn.addEventListener('click', () => {
+    console.log("clicked");
+    titleDifficulty.scrollIntoView({behavior: "smooth"});
+    difficulties.forEach(difficulty => {
+        difficulty.classList.remove('active');
+    })
+    iterations.forEach(iteration => {
+        iteration.classList.remove('active');
+    })
+    themes.forEach(theme => {
+        theme.classList.remove('active');
+    })
+    
+})
+generateBtn.addEventListener('click', () => {
+
+    resultats.innerHTML = "";
+    const displayRight = document.querySelector('.display-right');
+    displayRight.style.opacity = 0;
+    // displayContent();
+    checkDifficulty();
+    checkCategories();
+    checkIterations();
+
+    if(checkdiff == 0) {
+        createSpanDifficulty();
+    } else if (checkcat == 0) {
+        createSpanCategories();
+    } else if (checkite ==0) {
+        createSpanIte();
+    } else {
+        displayResults();
+    }
+})
 
 function changeContent(el) {
      attr = el.getAttribute('language');
@@ -71,6 +108,32 @@ function changeContent(el) {
     warningMessage.innerHTML = resultText[attr].warningmessage;
     coolMessage.innerHTML = coolmessageObj[attr].cool1;
     getTheParameters();
+    const resetBtn = document.querySelector('.reset-btn');
+const generateBtn = document.querySelector('.generate-btn');
+
+resetBtn.addEventListener('click', () => {
+    console.log("clicked");
+    titleDifficulty.scrollIntoView({behavior: "smooth"});
+    difficulties.forEach(difficulty => {
+        difficulty.classList.remove('active');
+    })
+    iterations.forEach(iteration => {
+        iteration.classList.remove('active');
+    })
+    themes.forEach(theme => {
+        theme.classList.remove('active');
+    })
+    
+})
+generateBtn.addEventListener('click', () => {
+    console.log("clicked");
+    resultats.innerHTML = "";
+    const displayRight = document.querySelector('.display-right');
+    displayRight.style.opacity = 0;
+    displayContent();
+})
+
+    
 
 }
 
@@ -256,9 +319,8 @@ function displayResults() {
     const displayRight = document.querySelector('.display-right');
     displayRight.style.opacity = 0;
     displayContent();
-        //display le loader, fonction qui le display, attends 2secondes puis remove display avec classe
-    //puis display le display-right: d'abord construit le texte etc et à la fin ajoute classe au display right
-    //Dans la fonction de display: tout afficher
+    
+
 }
 
 function displayContent() {
@@ -357,29 +419,7 @@ function createResults() {
 
 
 
-//reset all parameters 
-const resetBtn = document.querySelector('.reset-btn');
-const generateBtn = document.querySelector('.generate-btn');
 
-resetBtn.addEventListener('click', () => {
-    titleDifficulty.scrollIntoView({behavior: "smooth"});
-    difficulties.forEach(difficulty => {
-        difficulty.classList.remove('active');
-    })
-    iterations.forEach(iteration => {
-        iteration.classList.remove('active');
-    })
-    themes.forEach(theme => {
-        theme.classList.remove('active');
-    })
-    
-})
-generateBtn.addEventListener('click', () => {
-    resultats.innerHTML = "";
-    const displayRight = document.querySelector('.display-right');
-    displayRight.style.opacity = 0;
-    displayContent();
-})
 
 
 
